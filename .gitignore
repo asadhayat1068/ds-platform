@@ -1,0 +1,29 @@
+# Build output
+/bin/
+/dist/
+target/
+*.test
+
+# Coverage and profiles
+*.out
+coverage.*
+*.pprof
+
+# Local-only Go workspace (never commit; see plan §7.2)
+go.work
+go.work.sum
+
+# Secrets and local env
+.env
+*.pem
+*.key
+
+# Editors and OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+
+# TLA+ model-checker output
+states/
+*.tlc
