@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+subject=$(head -1 "$1")
+if ! [[ "$subject" =~ ^(naive|refactor|fix|test|feat|perf|docs|chore|wip|revert)(\(.+\))?!?:\ .+ ]]; then
+  echo "Subject must look like 'fix: retry only on retryable codes' (got: $subject)"
+  exit 1
+fi
