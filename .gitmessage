@@ -1,0 +1,11 @@
+
+
+# <type>: <imperative subject, ~50 chars, no period>
+#
+# <body: WHY this change, not what. Wrap at 72.>
+#
+# Types: naive refactor fix test feat perf docs chore wip
+#   refactor = structure changes, behaviour doesn't
+#   fix      = behaviour changes
+# One idea per commit. If the subject needs "and", split it.
+# Footer: Fixes #N
