@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ -f go.mod ]]; then
+  staged=$(git diff --cached --name-only --diff-filter=ACM -- '*.go')
+  if [[ -n "$staged" ]]; then
+    unformatted=$(gofmt -l $staged)
+    [[ -z "$unformatted" ]] || { echo "run gofmt -w on: $unformatted"; exit 1; }
+  fi
+  go build ./... && go vet ./...
+fi
+
+if [[ -f Cargo.toml ]]; then
+  cargo fmt --all -- --check
+  cargo build --quiet
+fi
